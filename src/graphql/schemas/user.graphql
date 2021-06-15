@@ -1,0 +1,10 @@
+extend type Mutation {
+    register(username: String!, password: String!): AuthResponse!
+    login(username: String!, password: String!): AuthResponse!
+}
+
+type AuthResponse {
+    token: String!
+    username: String!
+    id: Int!
+}
