@@ -1,17 +1,15 @@
-import express from "express";
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer } from "apollo-server";
 import schema from "./graphql/schemasMap";
 import config from "./config";
 
 const PORT: number = config.SERVER_PORT;
 
-const app = express();
 const server = new ApolloServer({
   schema,
+  introspection: true,
+  context: ({ req }) => req,
 });
 
-server.applyMiddleware({ app, path: "/" });
-
-app.listen(PORT, () => {
-  console.log(`\nGraphql is now running on http://localhost:${PORT}/graphql`);
-});
+server.listen({ port: PORT }, () =>
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+);

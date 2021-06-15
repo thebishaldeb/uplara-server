@@ -12,13 +12,14 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "engines": {
-    "node": "11.4.0"
+    "node": "12.19.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebishaldeb/uplara-server.git"
   },
   "dependencies": {
+    "apollo-server": "^2.25.1",
     "apollo-server-express": "^2.25.1",
     "auth0": "^2.35.0",
     "axios": "^0.21.1",
