@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
-    "start": "nodemon src/index.ts"
+    "start": "node src/index.ts",
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
