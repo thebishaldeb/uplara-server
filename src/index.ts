@@ -1,8 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import schema from "./graphql/schemasMap";
-import config from "./config";
-
-const PORT: number = config.SERVER_PORT;
+require("dotenv").config();
 
 const server = new ApolloServer({
   schema,
@@ -10,6 +8,6 @@ const server = new ApolloServer({
   context: ({ req }) => req,
 });
 
-server.listen({ port: PORT }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000`)
+server.listen({ port: process.env.PORT || 4000 }, () =>
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 );

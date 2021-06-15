@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const {
   NODE_ENV,
-  SERVER_PORT,
+  PORT,
   SALT_ROUND,
 
   DB_HOST,
@@ -19,7 +19,7 @@ const {
 
 export default {
   NODE_ENV,
-  SERVER_PORT: Number(SERVER_PORT),
+  PORT: Number(PORT),
   SALT_ROUND: Number(SALT_ROUND),
 
   DB_HOST,
