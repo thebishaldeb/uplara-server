@@ -6,8 +6,10 @@
   "license": "MIT",
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
-    "start": "node src/index.ts",
-    "dev": "nodemon src/index.ts"
+    "start": "node 'dist/server.js'",
+    "build": "tsc -p . && ncp src dist",
+    "dev": "nodemon src/index.ts",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "graphql-import-node": "^0.0.4",
     "knex": "^0.95.6",
     "lodash": "^4.17.21",
+    "ncp": "^2.0.0",
     "pg": "^8.6.0"
   },
   "devDependencies": {
