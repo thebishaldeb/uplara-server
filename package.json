@@ -1,11 +1,16 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
     "start": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebishaldeb/uplara-server.git"
   },
   "dependencies": {
     "apollo-server-express": "^2.25.1",

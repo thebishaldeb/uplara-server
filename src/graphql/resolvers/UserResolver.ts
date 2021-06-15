@@ -34,11 +34,11 @@ const getAccessToken = async (username: any) => {
     password: config.DUMMY_PASSWORD,
     realm: "Username-Password-Authentication",
     audience: `https://${config.DOMAIN}/api/v2/`,
-    scope: "openid profile email offline_access"
+    scope: "openid profile email offline_access",
   };
 
   const url = `https://${config.DOMAIN}/oauth/token`;
-  
+
   const response: any = await axios.post(url, body);
 
   return response.data.access_token;
@@ -61,7 +61,7 @@ export const UserResolvers: IResolvers = {
       );
 
       if (!passwordMatch) throw new Error("incorrect password!");
-      
+
       const token: string = await getAccessToken(username);
 
       return { token, username: user.username, id: user.id };
@@ -82,7 +82,7 @@ export const UserResolvers: IResolvers = {
         username: username,
         password: String(config.DUMMY_PASSWORD),
         email_verified: false,
-        verify_email: false
+        verify_email: false,
       };
 
       const data = await management.createUser(user_object);
