@@ -11,6 +11,9 @@
     "dev": "nodemon src/index.ts",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
+  "engines": {
+    "node": "11.4.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebishaldeb/uplara-server.git"
